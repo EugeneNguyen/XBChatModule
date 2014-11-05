@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'XBChatModule', :exclusive => true do
+  pod "XBChatModule", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "XBChatModule", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
