@@ -7,12 +7,16 @@
 //
 
 #import "XBCAppDelegate.h"
+#import <XBChatModule.h>
 
 @implementation XBCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[XBChatModule sharedInstance] setUsername:@"admin"];
+    [[XBChatModule sharedInstance] setPassword:@"admin"];
+    [[XBChatModule sharedInstance] setHost:@"sflashcard.com"];
+    [[XBChatModule sharedInstance] connect];
     return YES;
 }
 							

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JSQMessagesViewController/JSQMessages.h>
 
 @interface XBCViewController : UIViewController
+{
+    
+}
 
 @end
