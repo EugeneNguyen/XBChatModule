@@ -25,14 +25,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.jidStr = @"hoat@sflashcard.com";
-    self.title = @"JSQMessages";
     
     /**
      *  You MUST set your senderId and display name
      */
-    self.senderId = @"admin@sflashcard.com";
-    self.senderDisplayName = @"Nguyen Xuan Binh";
     
     
     /**
@@ -143,6 +139,14 @@
             message.date = item.timestamp;
             message.senderId = item.bareJidStr;
             message.isOutgoing = item.isOutgoing;
+            if (message.isOutgoing)
+            {
+                message.senderId = self.senderId;
+            }
+            else
+            {
+                message.senderId = self.jidStr;
+            }
             message.senderDisplayName = item.bareJid.full;
             [items addObject:message];
         }
