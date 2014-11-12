@@ -10,6 +10,7 @@
 #import "SDWebImageDownloader.h"
 #import "XBChatModule.h"
 #import "SDWebImageManager.h"
+#import "JSQMessagesAvatarImageFactory.h"
 
 static NSMutableDictionary *__sharedStoreAvatar = nil;
 
@@ -29,15 +30,16 @@ static NSMutableDictionary *__sharedStoreAvatar = nil;
 {
     if ([[XBChatModule sharedInstance] avatarFormat])
     {
-        UIImage *avatar = [XBMessageAvatarInformation sharedStore][username];
-        if (avatar)
+        
+        if ([XBMessageAvatarInformation sharedStore][username])
         {
-            XBMessageAvatarInformation *message = [[XBMessageAvatarInformation alloc] initWithAvatarImage:avatar highlightedImage:avatar placeholderImage:[[XBChatModule sharedInstance] avatarPlaceHolder]];
+            UIImage *avatar = [JSQMessagesAvatarImageFactory circularAvatarImage:[XBMessageAvatarInformation sharedStore][username] withDiameter:40];
+            XBMessageAvatarInformation *message = [[XBMessageAvatarInformation alloc] initWithAvatarImage:avatar highlightedImage:avatar placeholderImage:[JSQMessagesAvatarImageFactory circularAvatarImage:[[XBChatModule sharedInstance] avatarPlaceHolder] withDiameter:40]];
             return message;
         }
         else
         {
-            XBMessageAvatarInformation *message = [[XBMessageAvatarInformation alloc] initWithAvatarImage:nil highlightedImage:nil placeholderImage:[[XBChatModule sharedInstance] avatarPlaceHolder]];
+            XBMessageAvatarInformation *message = [[XBMessageAvatarInformation alloc] initWithAvatarImage:nil highlightedImage:nil placeholderImage:[JSQMessagesAvatarImageFactory circularAvatarImage:[[XBChatModule sharedInstance] avatarPlaceHolder] withDiameter:40]];
             NSString *path = [NSString stringWithFormat:[[XBChatModule sharedInstance] avatarFormat], username];
             [message loadPath:path];
             message.username = username;
@@ -52,9 +54,9 @@ static NSMutableDictionary *__sharedStoreAvatar = nil;
     [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:path] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
     } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-        [self setAvatarImage:image];
-        [self setAvatarHighlightedImage:image];
-        [[XBMessageAvatarInformation sharedStore] setValue:image forKey:self.username];
+        [self setAvatarImage:[JSQMessagesAvatarImageFactory circularAvatarImage:image withDiameter:40]];
+        [self setAvatarHighlightedImage:[JSQMessagesAvatarImageFactory circularAvatarImage:image withDiameter:40]];
+        [[XBMessageAvatarInformation sharedStore] setValue:[JSQMessagesAvatarImageFactory circularAvatarImage:image withDiameter:40] forKey:self.username];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"XBChatModuleNewAvatar" object:nil];
     }];
 }
