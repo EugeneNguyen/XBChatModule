@@ -11,6 +11,7 @@
 #import "XBMessage.h"
 #import "JSQMessagesBubbleImageFactory.h"
 #import "JSQMessagesTimestampFormatter.h"
+#import "XBMessageAvatarInformation.h"
 
 @interface XBMessageViewController () <NSFetchedResultsControllerDelegate>
 {
@@ -41,11 +42,11 @@
      *  You can set custom avatar sizes
      */
 //    if (![NSUserDefaults incomingAvatarSetting]) {
-        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+//        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
 //    }
     
 //    if (![NSUserDefaults outgoingAvatarSetting]) {
-        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+//        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
 //    }
     
 //    self.showLoadEarlierMessagesHeader = YES;
@@ -393,50 +394,18 @@
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     
     if (message.isOutgoing) {
-        return [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor colorWithRed:207.0f/255.0f green:238.0f/255.0f blue:249.0f/255.0f alpha:1]];
+        return [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor colorWithRed:224.0f/255.0f green:245.0f/255.0f blue:252.0f/255.0f alpha:1]];
     }
     
-    return [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor colorWithRed:207.0f/255.0f green:238.0f/255.0f blue:249.0f/255.0f alpha:1]];
+    return [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor colorWithRed:181.0f/255.0f green:231.0f/255.0f blue:250.0f/255.0f alpha:1]];
 }
 
-//- (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    /**
-//     *  Return `nil` here if you do not want avatars.
-//     *  If you do return `nil`, be sure to do the following in `viewDidLoad`:
-//     *
-//     *  self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-//     *  self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
-//     *
-//     *  It is possible to have only outgoing avatars or only incoming avatars, too.
-//     */
-//    
-//    /**
-//     *  Return your previously created avatar image data objects.
-//     *
-//     *  Note: these the avatars will be sized according to these values:
-//     *
-//     *  self.collectionView.collectionViewLayout.incomingAvatarViewSize
-//     *  self.collectionView.collectionViewLayout.outgoingAvatarViewSize
-//     *
-//     *  Override the defaults in `viewDidLoad`
-//     */
-//    JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
-//    
-//    if ([message.senderId isEqualToString:self.senderId]) {
-//        if (![NSUserDefaults outgoingAvatarSetting]) {
-//            return nil;
-//        }
-//    }
-//    else {
-//        if (![NSUserDefaults incomingAvatarSetting]) {
-//            return nil;
-//        }
-//    }
-//    
-//    
-//    return [self.demoData.avatars objectForKey:message.senderId];
-//}
+- (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    XBMessage *message = items[indexPath.row];
+    XBMessageAvatarInformation *avatar = [XBMessageAvatarInformation avatarObjectForUsername:message.senderId];
+    return avatar;
+}
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {

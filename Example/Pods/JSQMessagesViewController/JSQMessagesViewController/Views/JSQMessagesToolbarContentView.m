@@ -18,11 +18,9 @@
 
 #import "JSQMessagesToolbarContentView.h"
 
-#import "JSQMessagesComposerTextView.h"
-
 #import "UIView+JSQMessages.h"
 
-const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 4.0f;
+const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
 
 
 @interface JSQMessagesToolbarContentView ()
@@ -115,10 +113,6 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 4.0f;
 
 - (void)setLeftBarButtonItemWidth:(CGFloat)leftBarButtonItemWidth
 {
-    self.leftBarButtonItem.frame = CGRectMake(0.0f,
-                                              0.0f,
-                                              leftBarButtonItemWidth,
-                                              CGRectGetHeight(self.leftBarButtonContainerView.frame));
     self.leftBarButtonContainerViewWidthConstraint.constant = leftBarButtonItemWidth;
     [self setNeedsUpdateConstraints];
 }
@@ -154,10 +148,6 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 4.0f;
 
 - (void)setRightBarButtonItemWidth:(CGFloat)rightBarButtonItemWidth
 {
-    self.rightBarButtonItem.frame = CGRectMake(0.0f,
-                                               0.0f,
-                                               rightBarButtonItemWidth,
-                                               CGRectGetHeight(self.rightBarButtonContainerView.frame));
     self.rightBarButtonContainerViewWidthConstraint.constant = rightBarButtonItemWidth;
     [self setNeedsUpdateConstraints];
 }

@@ -52,6 +52,8 @@ extern NSString *const XBChatEventReceiveMessage;
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSString *host;
+@property (nonatomic, retain) NSString *avatarFormat;
+@property (nonatomic, retain) UIImage *avatarPlaceHolder;
 
 + (id)sharedInstance;
 

@@ -48,10 +48,13 @@ NSString *const XBChatEventReceiveMessage = @"XBChatEventReceiveMessage";
 @synthesize xmppvCardAvatarModule;
 @synthesize xmppCapabilities;
 @synthesize xmppCapabilitiesStorage;
+@synthesize xmppMessageArchivingStorage;
 
 @synthesize username = _username;
 @synthesize password = _password;
 @synthesize host = _host;
+@synthesize avatarFormat;
+@synthesize avatarPlaceHolder;
 
 + (id)sharedInstance
 {

@@ -12,5 +12,6 @@
 @interface XBMessageViewController : JSQMessagesViewController
 
 @property (nonatomic, retain) NSString *jidStr;
+@property (nonatomic, retain) NSMutableArray *avatarInformation;
 
 @end

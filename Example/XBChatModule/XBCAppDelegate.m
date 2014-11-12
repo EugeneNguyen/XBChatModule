@@ -8,6 +8,7 @@
 
 #import "XBCAppDelegate.h"
 #import <XBChatModule.h>
+#import <XBMessageAvatarInformation.h>
 
 @implementation XBCAppDelegate
 
@@ -17,6 +18,9 @@
     [[XBChatModule sharedInstance] setPassword:@"admin"];
     [[XBChatModule sharedInstance] setHost:@"sflashcard.com"];
     [[XBChatModule sharedInstance] connect];
+    
+    [[XBChatModule sharedInstance] setAvatarFormat:@"http://dev.sflashcard.com/images/mantis_logo.png?test=%@"];
+    [[XBChatModule sharedInstance] setAvatarPlaceHolder:[UIImage imageNamed:@"girl_9"]];
     return YES;
 }
 							
