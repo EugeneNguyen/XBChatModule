@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "XBChatModule"
-  s.version          = "0.1.2"
+  s.version          = "0.1.2.1"
   s.summary          = "Support XMPP & JSQMessageController"
   s.description      = <<-DESC
                        Support XMPP & JSQMessageController, which very easy to integrate

@@ -5,6 +5,30 @@
 [![License](https://img.shields.io/cocoapods/l/XBChatModule.svg?style=flat)](http://cocoadocs.org/docsets/XBChatModule)
 [![Platform](https://img.shields.io/cocoapods/p/XBChatModule.svg?style=flat)](http://cocoadocs.org/docsets/XBChatModule)
 
+## About
+
+You tired about hundreds of line to install chat module? We're here to help.
+
+XBChatModule is a simple to use module to implement chat module integrated with Jabber server. Just 4 lines of config and goooooooo
+
+``` objective-c
+[[XBChatModule sharedInstance] setUsername:@"username"];
+[[XBChatModule sharedInstance] setPassword:@"password"];
+[[XBChatModule sharedInstance] setHost:@"chat.example.com"];
+[[XBChatModule sharedInstance] connect];
+```
+
+And we also provide some other config as you wish :)
+
+``` objective-c
+[[XBChatModule sharedInstance] setAvatarFormat:@"http://chat.example.com/avatar/%@"];
+[[XBChatModule sharedInstance] setAvatarPlaceHolder:[UIImage imageNamed:@"girl_9"]];
+```
+
+That's all of what you need :)
+
+XBChatModule is a product of [LIBRETeamStudio](https://twitter.com/LIBRETeamStudio)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

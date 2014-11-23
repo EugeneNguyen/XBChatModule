@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad
 {
-    self.jidStr = @"hoat@sflashcard.com";
+    self.jidStr = @"ka.ra.5602@chat.facebook.com";
     [super viewDidLoad];
 }
 

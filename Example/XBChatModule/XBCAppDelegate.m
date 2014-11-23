@@ -16,7 +16,7 @@
 {
     [[XBChatModule sharedInstance] setUsername:@"admin"];
     [[XBChatModule sharedInstance] setPassword:@"admin"];
-    [[XBChatModule sharedInstance] setHost:@"sflashcard.com"];
+    [[XBChatModule sharedInstance] setHost:@"libre.com.vn"];
     [[XBChatModule sharedInstance] connect];
     
     [[XBChatModule sharedInstance] setAvatarFormat:@"http://dev.sflashcard.com/images/mantis_logo.png?test=%@"];
