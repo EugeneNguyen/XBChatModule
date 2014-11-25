@@ -10,9 +10,9 @@
 Pod::Spec.new do |s|
   s.name             = "XBChatModule"
   s.version          = "0.1.2.1"
-  s.summary          = "Support XMPP & JSQMessageController"
+  s.summary          = "Integrated XMPP and JSQMessageController"
   s.description      = <<-DESC
-                       Support XMPP & JSQMessageController, which very easy to integrate
+                       Using XMPPFramework & JSQMessageController, super easy to use
                        DESC
   s.homepage         = "https://github.com/EugeneNguyen/XBChatModule"
   s.license          = 'MIT'
@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
     'XBChatModule' => ['Pod/Assets/*.png']
   }
 
+  s.social_media_url = 'https://twitter.com/LIBRETeamStudio'
   s.library = 'xml2'
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'XMPPFramework'

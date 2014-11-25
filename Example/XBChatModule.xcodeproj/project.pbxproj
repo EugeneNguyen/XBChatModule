@@ -24,6 +24,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		AF8864ECD5A206A53D4DDEFC /* libPods-XBChatModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A240B6C3A5F357432A58BD /* libPods-XBChatModule.a */; };
+		B66F368D1A22E85C009FE0DB /* XBChatModulePlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B66F368C1A22E85C009FE0DB /* XBChatModulePlist.plist */; };
 		B6C64B841A133D08003B1332 /* girl_9.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C64B831A133D08003B1332 /* girl_9.png */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		8AA770CB3A4EDB234BA0649E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9B7DD8B004EB6B135F0AF17B /* XBChatModule.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XBChatModule.podspec; path = ../XBChatModule.podspec; sourceTree = "<group>"; };
 		B5F7FA4F513D4BA6338F2A46 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66F368C1A22E85C009FE0DB /* XBChatModulePlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = XBChatModulePlist.plist; sourceTree = "<group>"; };
 		B6C64B831A133D08003B1332 /* girl_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl_9.png; sourceTree = "<group>"; };
 		EC870CC93D7C69CC9A60CD9B /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 				6003F5A6195388D20070C39A /* XBCViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				B66F368C1A22E85C009FE0DB /* XBChatModulePlist.plist */,
 			);
 			path = XBChatModule;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */,
+				B66F368D1A22E85C009FE0DB /* XBChatModulePlist.plist in Resources */,
 				B6C64B841A133D08003B1332 /* girl_9.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,

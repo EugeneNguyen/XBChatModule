@@ -64,7 +64,26 @@ NSString *const XBChatEventReceiveMessage = @"XBChatEventReceiveMessage";
         [__sharedXBChatModule setupStream];
     }
     return __sharedXBChatModule;
+    
 }
+
+
+- (void)loadFromPlist:(NSString *)plistName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
+    NSDictionary *information = [NSDictionary dictionaryWithContentsOfFile:path];
+    [self loadFromDictionary:information];
+}
+
+- (void)loadFromDictionary:(NSDictionary *)information
+{
+    self.host = information[@"host"];
+    self.avatarFormat = information[@"avatarFormat"];
+    self.avatarPlaceHolder = information[@"girl_9"];
+    
+    
+}
+
 
 - (void)setUsername:(NSString *)username
 {

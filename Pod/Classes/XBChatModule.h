@@ -55,6 +55,9 @@ extern NSString *const XBChatEventReceiveMessage;
 @property (nonatomic, retain) NSString *avatarFormat;
 @property (nonatomic, retain) UIImage *avatarPlaceHolder;
 
+- (void)loadFromPlist:(NSString *)plistName;
+- (void)loadFromDictionary:(NSDictionary *)information;
+
 + (id)sharedInstance;
 
 - (BOOL)connect;

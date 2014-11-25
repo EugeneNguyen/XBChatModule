@@ -26,37 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    /**
-     *  You MUST set your senderId and display name
-     */
-    
-    
-    /**
-     *  Load up our fake data for the demo
-     */
-//    self.demoData = [[DemoModelData alloc] init];
-    
-    
-    /**
-     *  You can set custom avatar sizes
-     */
-//    if (![NSUserDefaults incomingAvatarSetting]) {
-//        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-//    }
-    
-//    if (![NSUserDefaults outgoingAvatarSetting]) {
-//        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
-//    }
-    
-//    self.showLoadEarlierMessagesHeader = YES;
     [self loadDataToTable];
     [self fetchData];
-    
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
-//                                                                              style:UIBarButtonItemStyleBordered
-//                                                                             target:self
-//                                                                             action:@selector(receiveMessagePressed:)];
 }
 
 - (void)fetchData
@@ -320,11 +291,6 @@
 //        }
 //        
 //    });
-//}
-
-//- (void)closePressed:(UIBarButtonItem *)sender
-//{
-//    [self.delegateModal didDismissJSQDemoViewController:self];
 //}
 
 #pragma mark - JSQMessagesViewController method overrides
