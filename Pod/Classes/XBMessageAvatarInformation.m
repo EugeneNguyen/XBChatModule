@@ -30,7 +30,6 @@ static NSMutableDictionary *__sharedStoreAvatar = nil;
 {
     if ([[XBChatModule sharedInstance] avatarFormat])
     {
-        
         if ([XBMessageAvatarInformation sharedStore][username])
         {
             UIImage *avatar = [JSQMessagesAvatarImageFactory circularAvatarImage:[XBMessageAvatarInformation sharedStore][username] withDiameter:40];

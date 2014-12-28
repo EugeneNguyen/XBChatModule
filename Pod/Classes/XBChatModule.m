@@ -122,6 +122,9 @@ NSString *const XBChatEventReceiveMessage = @"XBChatEventReceiveMessage";
     [_message addAttributeWithName:@"type" stringValue:@"chat"];
     [_message addAttributeWithName:@"to" stringValue:jid];
     [_message addChild:body];
+    
+    NSXMLElement * thread = [NSXMLElement elementWithName:@"thread" stringValue:@"SomeThreadName"];
+    [_message addChild:thread];
 
     [[self xmppStream] sendElement:_message];
 }
@@ -472,7 +475,7 @@ NSString *const XBChatEventReceiveMessage = @"XBChatEventReceiveMessage";
 
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
-
+    NSLog(@"connected");
 
     isXmppConnected = YES;
 
@@ -497,6 +500,7 @@ NSString *const XBChatEventReceiveMessage = @"XBChatEventReceiveMessage";
 - (BOOL)xmppStream:(XMPPStream *)sender didReceiveIQ:(XMPPIQ *)iq
 {
 
+    NSLog(@"receive IQ %@", iq);
     return NO;
 }
 
